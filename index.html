@@ -12,7 +12,7 @@
     <!-- vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- js -->
-    <script src="js/script.js" type="module" defer></script>
+    <script src="js/script.js" type="module"></script>
     <!-- title -->
     <title>Boolzapp</title>
 </head>
@@ -89,7 +89,7 @@
                 <!-- message toolbar -->
                 <div class="toolbar d d-flex justify-content-around align-items-center">
                     <a href=""><i class="fa-regular fa-face-smile ms-3 me-3 icon"></i></a>
-                    <input type="message" class="form-control message-input" id="message" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="newMsg" type="message" class="form-control message-input" v-model="messageSent" id="message" placeholder="Scrivi un messaggio">
                     <a href=""><i class="fa-solid fa-microphone ms-3 me-3 icon"></i></a>
                 </div>
             </div>

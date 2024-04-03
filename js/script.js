@@ -9,7 +9,15 @@ createApp({
         }
     },
     methods: {
-
+        newMsg(){
+            const msgSent = {
+                date: 'ciao',
+                message: this.messageSent,
+                status: 'sent'
+            }
+            this.messageSent = ''
+            this.activeContactId.messages.push(msgSent)
+        },
     },
     computed: {
         activeContact(){
