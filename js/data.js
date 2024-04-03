@@ -1,7 +1,7 @@
 export const contacts = [
     {
         name: 'Michele',
-        avatar: './img/avatar_1.png',
+        avatar: 'avatar_1.jpg',
         id: 1,
         visible: true,
         messages: [
@@ -24,7 +24,7 @@ export const contacts = [
     },
     {
         name: 'Fabio',
-        avatar: './img/avatar_2.png',
+        avatar: 'avatar_2.jpg',
         id: 2,
         visible: true,
         messages: [
@@ -47,7 +47,7 @@ export const contacts = [
     },
     {
         name: 'Samuele',
-        avatar: './img/avatar_3.png',
+        avatar: 'avatar_3.jpg',
         id: 3,
         visible: true,
         messages: [
@@ -70,7 +70,7 @@ export const contacts = [
     },
     {
         name: 'Alessandro B.',
-        avatar: './img/avatar_4.png',
+        avatar: 'avatar_4.jpg',
         id: 4,
         visible: true,
         messages: [
@@ -88,7 +88,7 @@ export const contacts = [
     },
     {
         name: 'Alessandro L.',
-        avatar: './img/avatar_5.png',
+        avatar: 'avatar_5.jpg',
         id: 5,
         visible: true,
         messages: [
@@ -106,7 +106,7 @@ export const contacts = [
     },
     {
         name: 'Claudia',
-        avatar: './img/avatar_6.png',
+        avatar: 'avatar_6.jpg',
         id: 6,
         visible: true,
         messages: [
@@ -129,7 +129,7 @@ export const contacts = [
     },
     {
         name: 'Federico',
-        avatar: './img/avatar_7.png',
+        avatar: 'avatar_7.jpg',
         id: 7,
         visible: true,
         messages: [
@@ -147,7 +147,7 @@ export const contacts = [
     },
     {
         name: 'Davide',
-        avatar: './img/avatar_8.png',
+        avatar: 'avatar_8.jpg',
         id: 8,
         visible: true,
         messages: [

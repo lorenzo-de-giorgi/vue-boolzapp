@@ -13,9 +13,72 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- js -->
     <script src="js/script.js" type="module" defer></script>
+    <!-- title -->
     <title>Boolzapp</title>
 </head>
 <body>
+    <div id="app" class="py-4">
+        <main class="container ldg-cont d-flex p-0">
+            <!-- left col -->
+            <div id="contact-section" class="ldg-col">
+                <!-- toolbar my profile -->
+                <div class="toolbar d-flex justify-content-between align-items-center ">
+                    <div>
+                        <img src="./img/avatar_io.jpg" alt="" class="my-avatar p-2 pt-2 img-fluid rounded-circle">
+                        <span>Sofia</span>
+                    </div>
+                    <div class="me-3">
+                        <i class="fa-solid fa-message me-3 icon"></i>
+                        <i class="fa-solid fa-circle-notch me-3 icon"></i>
+                        <i class="fa-solid fa-ellipsis-vertical me-3 icon"></i>
+                    </div>
+                </div>
+                <!-- notification -->
+                <div class="notification"></div>
+                <!-- search section -->
+                <div class="searchbar">search</div>
+                <!-- contacts -->
+                <div class="contacts">
+                    <div class="contact d-flex align-content-start" v-for="(contact, index) in contacts" :class="{'active': activeContactId === contact.id }" @click="activeContactId = contact.id">
+                        <div class="avatar">
+                            <img :src="'./img/'+contact.avatar" alt="pfp" class="img-fluid rounded-circle">
+                        </div>
+                        <div class="ps-3">
+                            <h6>{{contact.name}}</h6>
+                            <span>Ultimo Messaggio</span>
+                        </div>
+                        <div class="time ms-auto"><small>12:55</small></div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- right col -->
+            <div id="chat-section" class="ldg-col">
+                <!-- top toolbar -->
+                <div class="toolbar d-flex justify-content-between align-items-center ">
+                    <div class="d-flex align-items-center">
+                        <img :src="'./img/'+ activeContact.avatar" alt="pfp" class="rounded-circle avatar-active">
+                        <div class="ps-3">
+                            <h6 class="name">{{activeContact.name}}</h6>
+                            <span class="last-access">Ultimo accesso {{}}</span>
+                        </div>
+                    </div>
+                    <div class="pe-3">
+                        <i class="fa-solid fa-magnifying-glass me-3 icon"></i>
+                        <i class="fa-solid fa-paperclip me-3 icon"></i>
+                        <i class="fa-solid fa-ellipsis-vertical me-3 icon"></i>
+                    </div>
+                </div>
+                <!-- chat -->
+                <div class="chat">
+                    <div class="d-flex" v-for="(msg, index) in activeContact.messages">
+                        <div class="msg" :class="msg.status">{{msg.message}}</div>
+                    </div>
+                </div>
+                <!-- message toolbar -->
+                <div class="toolbar"></div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

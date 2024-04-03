@@ -4,5 +4,126 @@
 	--color-background-creamw: #d9dbd5;
 	--color-message-alert: #8edafc;
 	--color-gray: #b1b1b1;
+	--color-my-profile: #eaeaea;
 	--color-message-green: #d5f9ba;
+	--color-white-bg: #ffffff;
+}
+
+.debug{
+	border: 1px solid red;
+}
+
+#app{
+	height: 100vh;
+	width: 100%;
+	background: linear-gradient(180deg, #009688 18%, #D8DBD5 18%);
+	overflow-y: auto;
+}
+
+img{
+	width: 100%;
+}
+
+.ldg-cont{
+	background-color: var(--color-background-creamw);
+	height: 100%;
+}
+
+.ldg-col{
+	height: calc(100vh - 50px);
+	overflow-y: auto;
+}
+
+/* icons */
+.icon{
+	color: var(--color-gray);
+	font-size: 20px;
+}
+
+/* contacts section */
+#contact-section{
+	background-color: var(--color-white-bg);
+	width: 30%;
+}
+
+.chat{
+	height: calc(100% - 140px);
+	overflow-y: auto;
+	padding: 20px;
+	background-image: url(../img/mine.jpg);
+}
+
+.toolbar{
+	height: 70px;
+	background-color: var(--color-my-profile);
+}
+
+.my-avatar{
+	width: 60px;
+}
+
+.notification{
+	height: 70px;
+	background-color: var(--color-message-alert);
+}
+
+.searchbar{
+	height: 50px;
+}
+
+.contacts{
+	height: calc(100% - 190px);
+	overflow-y: auto;
+	cursor: pointer;
+}
+
+.contact{
+	border-bottom: 	1px solid var(--color-gray);
+	padding: 10px;
+}
+
+.avatar{
+	width: 50px;
+}
+
+.active{
+	background-color: var(--color-my-profile);
+}
+
+/* chat section */
+#chat-section{
+	
+	width: 70%;
+}
+
+.msg{
+	width: 300px;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 8px;
+}
+
+.sent{
+	background-color: var(--color-message-green);
+	margin-left: auto;
+}
+
+.received{
+	background-color: var(--color-white-bg);
+	margin-right: auto;
+}
+
+/* top toolbar right */
+.avatar-active{
+	width: 60px;
+}
+
+.name{
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+
+.last-access{
+	font-size: 15px;
+	color: var(--color-gray);
 }
