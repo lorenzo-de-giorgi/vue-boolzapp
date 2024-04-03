@@ -82,14 +82,14 @@
                 </div>
                 <!-- chat -->
                 <div class="chat">
-                    <div class="d-flex" v-for="(msg, index) in activeContact.messages">
+                    <div class="d-flex" v-for="(msg, index) in this.contacts[this.activeContactId].messages">
                         <div class="msg" :class="msg.status">{{msg.message}}</div>
                     </div>
                 </div>
                 <!-- message toolbar -->
                 <div class="toolbar d d-flex justify-content-around align-items-center">
                     <a href=""><i class="fa-regular fa-face-smile ms-3 me-3 icon"></i></a>
-                    <input @keyup.enter="newMsg" type="message" class="form-control message-input" v-model="messageSent" id="message" placeholder="Scrivi un messaggio">
+                    <input type="message" class="form-control message-input" v-model="newMsg" id="message" placeholder="Scrivi un messaggio" @keyup.enter="mewMessage">
                     <a href=""><i class="fa-solid fa-microphone ms-3 me-3 icon"></i></a>
                 </div>
             </div>

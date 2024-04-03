@@ -9,14 +9,17 @@ createApp({
         }
     },
     methods: {
-        newMsg(){
-            const msgSent = {
-                date: 'ciao',
-                message: this.messageSent,
+        mewMessage(){
+            const msg = {
+                date: '',
+                message: this.newMsg,
                 status: 'sent'
             }
-            this.messageSent = ''
-            this.activeContactId.messages.push(msgSent)
+            // this.contacts.messages.push(msg);
+            this.contacts[this.activeContactId].messages.push(msg)
+            console.log(this.contacts[this.activeContactId])
+            this.newMsg = ''
+            setTimeout(()=>{this.contacts[this.activeContactId].messages.push({date:'ciao', message: 'Ok', status: 'received'})}, 1000);
         },
     },
     computed: {
@@ -25,6 +28,6 @@ createApp({
         }
     },
     mounted() {
-        console.log(this.contacts)
+        // console.log(this.contacts)
     },
 }).mount('#app')
