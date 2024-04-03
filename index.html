@@ -28,15 +28,26 @@
                         <span>Sofia</span>
                     </div>
                     <div class="me-3">
-                        <i class="fa-solid fa-message me-3 icon"></i>
-                        <i class="fa-solid fa-circle-notch me-3 icon"></i>
-                        <i class="fa-solid fa-ellipsis-vertical me-3 icon"></i>
+                        <a href=""><i class="fa-solid fa-message me-3 icon"></i></a>
+                        <a href=""><i class="fa-solid fa-circle-notch me-3 icon"></i></a>
+                        <a href=""><i class="fa-solid fa-ellipsis-vertical me-3 icon"></i></a>
                     </div>
                 </div>
                 <!-- notification -->
-                <div class="notification"></div>
+                <div class="notification d-flex align-items-center p-3">
+                    <div class="notification-bell rounded-circle p-3">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div>
+                        <h6 class="notify">Ricevi notifiche di nuovi messaggi</h6>
+                        <a href="" class="enable-notify">Attiva notifiche desktop</a>
+                    </div>
+                </div>
                 <!-- search section -->
-                <div class="searchbar">search</div>
+                <div class="input-group">
+                    <span class="input-group-text m-2 me-0" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass icon"></i></span>
+                    <input type="text" class="form-control m-2 ms-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
                 <!-- contacts -->
                 <div class="contacts">
                     <div class="contact d-flex align-content-start" v-for="(contact, index) in contacts" :class="{'active': activeContactId === contact.id }" @click="activeContactId = contact.id">
@@ -64,9 +75,9 @@
                         </div>
                     </div>
                     <div class="pe-3">
-                        <i class="fa-solid fa-magnifying-glass me-3 icon"></i>
-                        <i class="fa-solid fa-paperclip me-3 icon"></i>
-                        <i class="fa-solid fa-ellipsis-vertical me-3 icon"></i>
+                        <a href=""><i class="fa-solid fa-magnifying-glass me-3 icon"></i></a>
+                        <a href=""><i class="fa-solid fa-paperclip me-3 icon"></i></a>
+                        <a href=""><i class="fa-solid fa-ellipsis-vertical me-3 icon"></i></a>
                     </div>
                 </div>
                 <!-- chat -->
@@ -76,7 +87,11 @@
                     </div>
                 </div>
                 <!-- message toolbar -->
-                <div class="toolbar"></div>
+                <div class="toolbar d d-flex justify-content-around align-items-center">
+                    <a href=""><i class="fa-regular fa-face-smile ms-3 me-3 icon"></i></a>
+                    <input type="message" class="form-control message-input" id="message" placeholder="Scrivi un messaggio">
+                    <a href=""><i class="fa-solid fa-microphone ms-3 me-3 icon"></i></a>
+                </div>
             </div>
         </main>
     </div>

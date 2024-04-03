@@ -82,6 +82,26 @@ img{
 	padding: 10px;
 }
 
+.notification-bell{
+	background-color: var(--color-white-bg);
+	color: var(--color-message-alert);
+}
+
+.fa-bell-slash{
+	font-size: 20px;
+}
+
+.notify{
+	font-size: 15px;
+	margin-left: 10px;
+}
+
+.enable-notify{
+	color: var(--color-gray);
+	font-size: 13px;
+	margin-left: 10px;
+}
+
 .avatar{
 	width: 50px;
 }
@@ -126,4 +146,10 @@ img{
 .last-access{
 	font-size: 15px;
 	color: var(--color-gray);
+}
+
+/* bottom toolbar chat */
+
+.message-input{
+	height: 70%;
 }
