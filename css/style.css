@@ -1,0 +1,8 @@
+/* root dei colori */
+:root {
+	--color-background-green: #009688;
+	--color-background-creamw: #d9dbd5;
+	--color-message-alert: #8edafc;
+	--color-gray: #b1b1b1;
+	--color-message-green: #d5f9ba;
+}
