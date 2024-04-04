@@ -163,3 +163,11 @@ img{
 .message-input{
 	height: 70%;
 }
+
+.fa-angle-down{
+	display: none;
+}
+
+.msg:hover .fa-angle-down{
+	display: block
+}

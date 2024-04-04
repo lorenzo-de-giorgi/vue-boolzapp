@@ -7,7 +7,8 @@ createApp({
         return{
             contacts,
             activeContactId: 1,
-            searchText: ''
+            searchText: '',
+            menuShow: false
         }
     },
     methods: {
@@ -30,9 +31,9 @@ createApp({
         },
         filteredContacts(){
             return this.contacts.filter((el) => el.name.toLowerCase().includes(this.searchText))
-        }
+        },
     },
     mounted() {
         // console.log(this.contacts)
     },
-}).mount('#app')
+}).mount('#app');
