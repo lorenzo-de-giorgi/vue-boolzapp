@@ -164,10 +164,23 @@ img{
 	height: 70%;
 }
 
-.fa-angle-down{
-	display: none;
+.dp-menu{
+    position: absolute;
+    z-index: 200;
 }
 
-.msg:hover .fa-angle-down{
-	display: block
+.dp-menu-option{
+    background-color: var(--color-white-bg);
+    color: #000;
+    border-radius: 4px;
+}
+
+.dp-menu-option > li {
+	margin-left: -20px;
+	list-style: none;
+	padding: 10px;
+}
+
+.dp-menu-option > li:hover {
+    cursor: pointer;
 }

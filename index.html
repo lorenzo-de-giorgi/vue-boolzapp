@@ -88,13 +88,13 @@
                     <div class="d-flex" v-for="(msg, index) in this.contacts[this.activeContactId].messages">
                         <div class="msg" :class="msg.status">
                             {{msg.message}}
-                            <span class="dp-menu">
-                                <i class="fa-solid fa-angle-down" @click="menuShow = !menuShow"></i>
-                                <ul class="dropdown-menu show">
-                                  <li><a class="dropdown-item" href="#">Informazioni Messaggio</a></li>
-                                  <li><a class="dropdown-item" href="#">Elimina Messaggio</a></li>
+                            <i class="fa-solid fa-chevron-down" @click="messageSettings(index)"></i>
+                            <div class="dp-menu" v-if="settingActive && index === activeMessage">
+                                <ul class="dp-menu-option">
+                                    <li class="info">Info Messaggio</li>
+                                    <li class="delete" @click="deleteMessage(activeContactId, index)">Elimina Messaggio</li>
                                 </ul>
-                              </span>                
+                            </div>   
                             <br>
                             <span><small>{{msg.date}}</small></span>
                         </div>

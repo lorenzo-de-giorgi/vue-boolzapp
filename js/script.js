@@ -8,7 +8,7 @@ createApp({
             contacts,
             activeContactId: 1,
             searchText: '',
-            menuShow: false
+            settingActive: false
         }
     },
     methods: {
@@ -24,6 +24,14 @@ createApp({
             this.newMsg = ''
             setTimeout(()=>{this.contacts[this.activeContactId].messages.push({date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'), message: 'Ok', status: 'received'})}, 1000);
         },
+        messageSettings(index) {
+            this.settingActive = !this.settingActive;
+            this.activeMessage = index;
+        },
+        deleteMessage(activeContactId, index) {
+            this.contacts[activeContactId].messages.splice(index, 1);
+            this.settingActive = !this.settingActive;
+            },
     },
     computed: {
         activeContact(){
