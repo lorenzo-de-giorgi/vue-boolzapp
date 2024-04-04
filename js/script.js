@@ -1,17 +1,19 @@
 import { contacts } from "./data.js";
 const {createApp} = Vue;
+const dt = luxon.DateTime;
 
 createApp({
     data(){
         return{
             contacts,
-            activeContactId: 1
+            activeContactId: 1,
+            searchText: ''
         }
     },
     methods: {
-        mewMessage(){
+        newMessage(){
             const msg = {
-                date: '',
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'),
                 message: this.newMsg,
                 status: 'sent'
             }
@@ -19,12 +21,15 @@ createApp({
             this.contacts[this.activeContactId].messages.push(msg)
             console.log(this.contacts[this.activeContactId])
             this.newMsg = ''
-            setTimeout(()=>{this.contacts[this.activeContactId].messages.push({date:'ciao', message: 'Ok', status: 'received'})}, 1000);
+            setTimeout(()=>{this.contacts[this.activeContactId].messages.push({date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'), message: 'Ok', status: 'received'})}, 1000);
         },
     },
     computed: {
         activeContact(){
             return this.contacts.find((el) => el.id === this.activeContactId)
+        },
+        filteredContacts(){
+            return this.contacts.filter((el) => el.name.toLowerCase().includes(this.searchText))
         }
     },
     mounted() {

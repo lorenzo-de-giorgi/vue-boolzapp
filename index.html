@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- js -->
@@ -46,19 +48,19 @@
                 <!-- search section -->
                 <div class="input-group">
                     <span class="input-group-text m-2 me-0" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass icon"></i></span>
-                    <input type="text" class="form-control m-2 ms-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input type="text" class="form-control m-2 ms-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" v-model="searchText">
                 </div>
                 <!-- contacts -->
                 <div class="contacts">
-                    <div class="contact d-flex align-content-start" v-for="(contact, index) in contacts" :class="{'active': activeContactId === contact.id }" @click="activeContactId = contact.id">
+                    <div class="contact d-flex align-content-start" v-for="(contact, index) in filteredContacts" :class="{'active': activeContactId === contact.id }" @click="activeContactId = contact.id">
                         <div class="avatar">
                             <img :src="'./img/'+contact.avatar" alt="pfp" class="img-fluid rounded-circle">
                         </div>
-                        <div class="ps-3">
+                        <div class="ps-2">
                             <h6>{{contact.name}}</h6>
-                            <span>Ultimo Messaggio</span>
+                            <span class="last-message">{{contact.messages[contact.messages.length - 1].message}}</span>
                         </div>
-                        <div class="time ms-auto"><small>12:55</small></div>
+                        <div class="time ms-auto"><small>{{contact.messages[contact.messages.length - 1].date}}</small></div>
                     </div>
                 </div>
             </div>
@@ -71,7 +73,7 @@
                         <img :src="'./img/'+ activeContact.avatar" alt="pfp" class="rounded-circle avatar-active">
                         <div class="ps-3">
                             <h6 class="name">{{activeContact.name}}</h6>
-                            <span class="last-access">Ultimo accesso {{}}</span>
+                            <span class="last-access">Ultimo accesso {{activeContact.messages[activeContact.messages.length - 1].date}}</span>
                         </div>
                     </div>
                     <div class="pe-3">
@@ -83,13 +85,19 @@
                 <!-- chat -->
                 <div class="chat">
                     <div class="d-flex" v-for="(msg, index) in this.contacts[this.activeContactId].messages">
-                        <div class="msg" :class="msg.status">{{msg.message}}</div>
+                        <div class="msg" :class="msg.status">
+                            {{msg.message}} 
+
+                            <br>
+                            <span><small>{{msg.date}}</small></span>
+                        </div>
+                        
                     </div>
                 </div>
                 <!-- message toolbar -->
                 <div class="toolbar d d-flex justify-content-around align-items-center">
                     <a href=""><i class="fa-regular fa-face-smile ms-3 me-3 icon"></i></a>
-                    <input type="message" class="form-control message-input" v-model="newMsg" id="message" placeholder="Scrivi un messaggio" @keyup.enter="mewMessage">
+                    <input type="message" class="form-control message-input" v-model="newMsg" id="message" placeholder="Scrivi un messaggio" @keyup.enter="newMessage">
                     <a href=""><i class="fa-solid fa-microphone ms-3 me-3 icon"></i></a>
                 </div>
             </div>

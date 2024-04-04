@@ -2,7 +2,7 @@ export const contacts = [
     {
         name: 'Michele',
         avatar: 'avatar_1.jpg',
-        id: 1,
+        id: 0,
         visible: true,
         messages: [
             {
@@ -25,7 +25,7 @@ export const contacts = [
     {
         name: 'Fabio',
         avatar: 'avatar_2.jpg',
-        id: 2,
+        id: 1,
         visible: true,
         messages: [
             {
@@ -48,7 +48,7 @@ export const contacts = [
     {
         name: 'Samuele',
         avatar: 'avatar_3.jpg',
-        id: 3,
+        id: 2,
         visible: true,
         messages: [
             {
@@ -71,7 +71,7 @@ export const contacts = [
     {
         name: 'Alessandro B.',
         avatar: 'avatar_4.jpg',
-        id: 4,
+        id: 3,
         visible: true,
         messages: [
             {
@@ -89,7 +89,7 @@ export const contacts = [
     {
         name: 'Alessandro L.',
         avatar: 'avatar_5.jpg',
-        id: 5,
+        id: 4,
         visible: true,
         messages: [
             {
@@ -107,7 +107,7 @@ export const contacts = [
     {
         name: 'Claudia',
         avatar: 'avatar_6.jpg',
-        id: 6,
+        id: 5,
         visible: true,
         messages: [
             {
@@ -130,7 +130,7 @@ export const contacts = [
     {
         name: 'Federico',
         avatar: 'avatar_7.jpg',
-        id: 7,
+        id: 6,
         visible: true,
         messages: [
             {
