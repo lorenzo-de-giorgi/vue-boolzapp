@@ -34,22 +34,6 @@ createApp({
             },1000);
         },
 
-        // newMessage(){ 
-        //     // this.contacts.messages.push(msg);
-        //     this.contacts[this.activeContactId].messages.push(msg)
-        //     this.$nextTick(() => {
-        //         this.$refs.messages [this.$refs.messages.length - 1].scrollIntoView({ behavior: 'smooth' });
-        //     });
-        //     console.log(this.contacts[this.activeContactId]);
-        //     this.newMsg = '',
-        //     setTimeout(()=>{
-        //         this.contacts[this.activeContactId].messages.push({
-        //             date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'), 
-        //             message: 'Ok', 
-        //             status: 'received'
-        //         }
-        //     )}, 1000);
-        // },
         messageSettings(index) {
             this.settingActive = !this.settingActive;
             this.activeMessage = index;
