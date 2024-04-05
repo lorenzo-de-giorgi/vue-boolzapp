@@ -184,3 +184,18 @@ img{
 .dp-menu-option > li:hover {
     cursor: pointer;
 }
+
+.fa-chevron-down{
+	display: none;
+}
+
+.msg:hover .fa-chevron-down{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.mia{
+	position: absolute;
+	bottom: 30px;
+	left: 45%;
+}
