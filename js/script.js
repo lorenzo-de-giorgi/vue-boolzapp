@@ -1,4 +1,5 @@
 import { contacts } from "./data.js";
+import { answer } from "./data.js"
 import Picker from './emoji-picker.js';
 const {createApp} = Vue;
 const dt = luxon.DateTime;
@@ -11,27 +12,27 @@ createApp({
             newMsg: '',
             searchText: '',
             settingActive: false,
-            showEmoji: false
+            showEmoji: false,
+            answer: answer
         }
     },
     methods: {
-        createMessage(msg, status){
-            const createMessage = {
-                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'),
-                message: msg,
-                status: status
-            }
-            return createMessage;
-        },
         newMessage(){
-            const createMessage = this.createMessage(this.newMsg, 'sent');
-            if(this.newMsg.trim() === '') return;
-            this.activeContact.messages.push(createMessage);
-            this.newMsg = '';
-            setTimeout(() => {
-                const createMessage = this.createMessage('ok', 'received');
-                this.activeContact.messages.push(createMessage);
-            },1000);
+            const msg = {
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'),
+                message: this.newMsg,
+                status: 'sent'
+            }
+            // this.contacts.messages.push(msg);
+            this.contacts[this.activeContactId].messages.push(msg)
+            console.log(this.contacts[this.activeContactId])
+            this.newMsg = ''
+            setTimeout(()=>{this.contacts[this.activeContactId].messages.push({
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy hh:mm:ss'), 
+                message: this.casualAnswer(), 
+                status: 'received'
+            }
+        )}, 1000);
         },
 
         messageSettings(index) {
@@ -79,6 +80,10 @@ createApp({
               }
               */
         },
+        casualAnswer() {
+            const random = Math.floor(Math.random() * this.answer.length);
+            return this.answer[random];
+        }
 
     },
     computed: {

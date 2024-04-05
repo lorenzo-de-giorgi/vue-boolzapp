@@ -169,3 +169,19 @@ export const contacts = [
         ],
     }
 ]
+
+export const answer = [
+    'Il mio colore preferito è il verde smeraldo.',
+    'Il mio piatto preferito è la lasagna alla bolognese.',
+    'Il mio film preferito è "Inception" di Christopher Nolan.',
+    'Il mio luogo preferito in vacanza è Parigi, Francia.',
+    'Il mio hobby preferito è fare escursioni in montagna.',
+    'Il mio modello di riferimento è Marie Curie per la sua dedizione alla scienza.',
+    "La mia stagione preferita è l'inverno per la neve e l'atmosfera natalizia.",
+    'Il mio animale preferito è il lupo per la sua forza e saggezza.',
+    'Il mio sogno nel cassetto è viaggiare per il mondo.',
+    'Il mio sport preferito è il calcio.',
+    'Il mio superpotere preferito sarebbe la telecinesi.',
+    'Il mio gusto musicale va dal rock classico alla musica elettronica.',
+    'Il mio momento preferito della giornata è il tramonto.'
+]
